@@ -1,25 +1,64 @@
 package dip.lab1.student.solution1;
 
-/**
- * A simple implementation sub-class of Employee. These are low-level classes
- * in the DIP. Does it meet the rules of DIP? If not fix it.
- *
- * @author your name goes here
- */
-public class SalariedEmployee extends Employee {
+import dip.lab1.student.solution1.HRService.WageType;
 
-    /** default constructor. Is this the best way to go? */
-    public SalariedEmployee() {}
+/**
+ * A subclass of Employee
+ *
+ * Michele Cullen
+ */
+public class SalariedEmployee implements Employee {
+    
+    private final WageType wageType;
+    
+    private double annualSalary;
+    private double annualBonus;
+
+    /** default constructor notes - I removed the default constructor because
+     * by forcing the data which all employees would have at hire, it eliminates
+     * the need for verification of completion of this information. 
+     */
+    
 
     /**
-     * Convenience constructor. Is this the best way to go?
-     * @param annualSalary - the employee's annual salary
-     * @param annualBonus - a bonus benefit, if any
+     * Convenience constructor. I added the wageType variable to the constructor
+     
      */
     public SalariedEmployee(double annualSalary, double annualBonus) {
-        setAnnualSalary(annualSalary);
-        setAnnualBonus(annualBonus);
+        this.annualSalary = annualSalary;
+        this.annualBonus = annualBonus;
+        this.wageType=WageType.SALARIED;
+    }
+    
+    @Override
+   public double getAnnualCompensation(){
+     double annualCompensation = annualSalary+annualBonus;  
+      
+   return annualCompensation;
+   }
+   
+    @Override
+   public WageType getWageType(){
+       
+       return wageType;
+   }
+
+    public double getAnnualSalary() {
+        return annualSalary;
     }
 
+    public void setAnnualSalary(double annualSalary) {
+        this.annualSalary = annualSalary;
+    }
+
+    public double getAnnualBonus() {
+        return annualBonus;
+    }
+
+    public void setAnnualBonus(double annualBonus) {
+        this.annualBonus = annualBonus;
+    }
     
-}
+    
+   }
+    
