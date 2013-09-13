@@ -9,7 +9,7 @@ import dip.lab1.student.solution1.HRService.WageType;
  */
 public class SalariedEmployee implements Employee {
     
-    private final WageType wageType;
+    private final WageType WAGE_TYPE;
     
     private double annualSalary;
     private double annualBonus;
@@ -27,7 +27,7 @@ public class SalariedEmployee implements Employee {
     public SalariedEmployee(double annualSalary, double annualBonus) {
         this.annualSalary = annualSalary;
         this.annualBonus = annualBonus;
-        this.wageType=WageType.SALARIED;
+        WAGE_TYPE=WageType.SALARIED;
     }
     
     @Override
@@ -39,8 +39,7 @@ public class SalariedEmployee implements Employee {
    
     @Override
    public WageType getWageType(){
-       
-       return wageType;
+       return WAGE_TYPE;
    }
 
     public double getAnnualSalary() {

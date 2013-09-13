@@ -29,12 +29,17 @@ public class Startup {
 
         // Test input/output..
         System.out.println("Employee 1 annual compensation: " +
-            nf.format(hr.getAnnualCompensationForEmployee(emp1)));
+            nf.format(hr.getAnnualCompensationForEmployee(emp1)) +
+                ".  They are a(n) "+ hr.getWageType(emp1) +
+                " employee.");
         System.out.println("Employee 2 annual compensation: " +
-            nf.format(hr.getAnnualCompensationForEmployee(emp2)));
+            nf.format(hr.getAnnualCompensationForEmployee(emp2)) +
+                ".  They are a(n) "+ hr.getWageType(emp2) +
+                " employee.");
         System.out.println("Employee 3 annual compensation: " +
-            nf.format(hr.getAnnualCompensationForEmployee(emp3,
-            HRService.SALARIED_TYPE)));
+            nf.format(hr.getAnnualCompensationForEmployee(emp3)) +
+                ".  They are a(n) "+ hr.getWageType(emp3) +
+                " employee.");
         
     }
 
