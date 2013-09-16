@@ -18,7 +18,7 @@ public class StartUp {
             
         
         MessageInput messageInput = new FileInput();
-        MessageOutput messageOutput = new ConsoleOutput();
+        MessageOutput messageOutput = new GUIOutput();
         
         MessengerService messengerService = new MessengerService(messageInput,messageOutput);
         messengerService.displayMessage();

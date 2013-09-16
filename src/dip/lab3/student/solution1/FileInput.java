@@ -15,10 +15,10 @@ import java.util.Scanner;
  */
 public class FileInput implements MessageInput {
     private String message;
-    private String [] messageArray = new String[4];
+    private String [] messageArray = new String[0];
     private File file;
     private String randomMessage;
-    private int arraySize = 1;
+    private int counter = 0;
 
  
     
@@ -26,6 +26,7 @@ public class FileInput implements MessageInput {
     @Override
     public String getMessage() {
     //arraySize=getArraySize();
+        
     Scanner inputFile;
     
     try{    
@@ -34,21 +35,22 @@ public class FileInput implements MessageInput {
    
     while(inputFile.hasNext())
     {
-       int counter = 0; 
-     
+       
+     String [] temp = new String[messageArray.length+1];
+     System.arraycopy(messageArray, 0, temp, 0, messageArray.length);
+     messageArray=temp;
      messageArray[counter]=inputFile.nextLine();
-     System.out.println(messageArray[counter]);
      counter++;
     }
     
     inputFile.close();
-    message=getRandomMessage();
+   
     }
     catch (FileNotFoundException e)
     {
         System.out.println("File not found");
     }
-        
+    message=getRandomMessage();    
     return message;
     
     }
@@ -56,39 +58,17 @@ public class FileInput implements MessageInput {
     
         
     private String getRandomMessage(){
-    
+    /**This method chooses a random number between 0 and one less than the 
+        messageArray length and then returns the message that is stored in 
+        the array**/
     Random randomNumbers = new Random();
     
-    int number = randomNumbers.nextInt(5); 
-    
+    int number = randomNumbers.nextInt(messageArray.length); 
     randomMessage = messageArray[number];
-        
+       
     return randomMessage;
     }
     
-//    private int getArraySize(){
-//    Scanner inputFile;
-//    
-//    try{    
-//    file = new File("Messages.txt");    
-//    inputFile = new Scanner(file);
-//   
-//    while(inputFile.hasNext())
-//    {
-//        
-//     arraySize++;
-//    }
-//    
-//    inputFile.close();
-//    
-//    }
-//    catch (FileNotFoundException e)
-//    {
-//        System.out.println("File not found");
-//    }
-//    
-//    
-//    return arraySize;
-//    }
+
     
 }
