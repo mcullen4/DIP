@@ -10,17 +10,9 @@ package dip.lab2.student.solution1;
  */
 public class TipService {
     
-    private TipCalculator tipCalculator;
-    
-      
-    public TipService(TipCalculator t){
-    tipCalculator = t;
-    }
-    public double getTip(){
-        return tipCalculator.getTip();
-    }
+
        
-    public double getTip(TipCalculator t){
+    public double getCalculatedTip(TipCalculator t){
         return t.getTip();
     }
 }

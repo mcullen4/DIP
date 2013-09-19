@@ -43,9 +43,9 @@ public class Startup {
                (FoodServiceTipCalculator.ServiceQuality.GOOD,25.00); 
        
        
-      TipService ts = new TipService(service);
+      TipService ts = new TipService();
       
-      System.out.println("The tip should be " + ts.getTip() + ".");
+      System.out.println("The tip should be " + ts.getCalculatedTip(service) + ".");
         
     }
     
