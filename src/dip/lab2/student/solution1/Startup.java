@@ -1,6 +1,7 @@
 package dip.lab2.student.solution1;
 
 // An useful import if you need it.
+import dip.lab2.FoodServiceTipCalculator.ServiceQuality;
 import java.text.NumberFormat;
 import java.util.HashSet;
 import java.util.Scanner;
@@ -24,9 +25,9 @@ public class Startup {
     
        
     
-    public static enum ServiceQuality {
-           GOOD, FAIR, POOR
-    };
+//    public static enum ServiceQuality {
+//           GOOD, FAIR, POOR
+//    };
  
     public static void main(String[] args) {
         
@@ -40,7 +41,7 @@ public class Startup {
 //                BaggageServiceTipCalculator.ServiceQuality.FAIR,5);
                 
        TipCalculator service = new FoodServiceTipCalculator
-               (FoodServiceTipCalculator.ServiceQuality.GOOD,25.00); 
+               (ServiceQuality.GOOD,25.00); 
        
        
       TipService ts = new TipService();

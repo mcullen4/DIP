@@ -21,9 +21,9 @@ public class FoodServiceTipCalculator implements TipCalculator {
     
 
     private double bill;
-    public enum ServiceQuality {
-        GOOD, FAIR, POOR
-    }
+//    public enum ServiceQuality {
+//        GOOD, FAIR, POOR
+//    }
     private ServiceQuality serviceQuality;
     
     private double tipRate;
@@ -32,6 +32,12 @@ public class FoodServiceTipCalculator implements TipCalculator {
         this.setServiceRating(q);
         this.setBill(billAmt);
         this.setTipPercentage();    }
+
+    FoodServiceTipCalculator(dip.lab2.FoodServiceTipCalculator.ServiceQuality serviceQuality, double billAmt) {
+        this.setServiceRating(ServiceQuality.GOOD);
+        this.setBill(billAmt);
+        this.setTipPercentage();
+    }
 
     @Override
     public double getTip() {
